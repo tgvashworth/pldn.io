@@ -29,6 +29,11 @@ Pulldown | Pulldown accepts a list of identifiers (like `jquery` and `backbone`)
 Pulldown API | The [Pulldown API](https://github.com/phuu/pulldown-api) resolves identifiers to URLs using [pulldown-resolve](https://github.com/phuu/pulldown-resolve). This actually defers to CDNJS, but this dependency can be changed or improved in future.
 CDNjs | As mentioned above, Pulldown gets its libraries from CDNjs, although this could be added to or improved in future.
 
+### Notes
+
+- We can include errors and informational notices by simply `console.log` inside the concatted file.
+- The information we get from usage will hopefully suggest useful sets, and mean we can predictively cache common combinations.
+
 ### Feedback
 
 Feedback on this idea is very welcome. There's a few questions I'd like to answer:
