@@ -23,8 +23,8 @@ The plan for pld.io is something like the following stack:
 Technology | Purpose
 ---|---
 Agressive HTTP caching | The same URL (say `/jquery@1.9.1/underscore`) will, for a long period of time, always produce the same output – so we should set far future cache headers to make sure the result is saved in the browsers HTTP cache.
-pldn.io server | If a unique URL is hit, the pldn.io server builds a file from its cache, or by deferring up the chain. When an uncached identifier is found, the main pld.io server will be hit – it will defer loading the file to the [Pulldown](https://github.com/jackfranklin/pulldown) module. It will then cache the file contents, build a file with all the requested libraries, in order, then serve it – gzipped, cached and piping hot.
-pldn.io cache | We'll cache the file contents associated with each identifier – possibly in memory, possibly in a fast key-value store, meaning `jquery` will be cached separately from `jquery@1.9.1`. That will allow us to build the resulting file really, really fast and have to avoid waiting for the Pulldown API.
+pldn.io server | If a new URL is hit, the pldn.io server builds a file from its cache, or by deferring up the chain. When an uncached identifier is found, the main pld.io server will be hit – it will defer loading the file to the [Pulldown](https://github.com/jackfranklin/pulldown) module. It will then cache the file contents, build a file with all the requested libraries, in order, then serve it – gzipped, cached and piping hot.
+pldn.io cache | We'll cache the file contents associated with each identifier – possibly in memory, possibly in a fast key-value store, meaning `jquery` will be cached separately from `jquery@1.9.1`. That will allow us to build the resulting file really, really fast and avoid having to wait for the Pulldown API.
 Pulldown | Pulldown accepts a list of identifiers (like `jquery` and `backbone`), and converts them into URLs for those libraries on a CDN by hitting the Pulldown API.
 Pulldown API | The [Pulldown API](https://github.com/phuu/pulldown-api) resolves identifiers to URLs using [pulldown-resolve](https://github.com/phuu/pulldown-resolve). This actually defers to CDNJS, but this dependency can be changed or improved in future.
 CDNjs | As mentioned above, Pulldown gets its libraries from CDNjs, although this could be added to or improved in future.
@@ -37,6 +37,9 @@ Feedback on this idea is very welcome. There's a few questions I'd like to answe
 - would you use it?
 - what are the browser performance implications?
 - what kind of headers should be set? (`Cache-Control`, `Pragma` etc)
+- anything I'm missing?
+
+Answers in a tweet, to [@phuunet](http://twitter.com/phuunet).
 
 ## License
 
