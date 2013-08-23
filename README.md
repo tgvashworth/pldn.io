@@ -51,7 +51,7 @@ Feedback on this idea is very welcome. There's a few questions I'd like to answe
 - what kind of headers should be set? (`Cache-Control`, `Pragma` etc)
 - anything I'm missing?
 
-Answers in a tweet, to [@phuunet](http://twitter.com/phuunet), or [open an issue](https://github.com/phuu/pldn.io/issues/new).
+Answers in a tweet to [@phuunet](http://twitter.com/phuunet), or [open an issue](https://github.com/phuu/pldn.io/issues/new).
 
 ## License
 
