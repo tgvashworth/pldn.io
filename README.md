@@ -33,6 +33,7 @@ CDNjs | As mentioned above, Pulldown gets its libraries from CDNjs, although thi
 
 - We can include errors and informational notices by simply `console.log` inside the concatted file.
 - The information we get from usage will hopefully suggest useful sets, and mean we can predictively cache common combinations.
+- Yahoo have a service called [YUI combo-handling](http://www.yuiblog.com/blog/2008/07/16/combohandler/) that does a similar thing but only for YUI components – thanks @triblondon for the pointer.
 
 ### Feedback
 
