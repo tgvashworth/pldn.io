@@ -37,7 +37,7 @@ Font-end people who's sites have a small set of dependencies, and who don't have
 
 - We can include errors and informational notices by simply `console.log` inside the concatted file.
 - The information we get from usage will hopefully suggest useful sets, and mean we can predictively cache common combinations.
-- Yahoo have a service called [YUI combo-handling](http://www.yuiblog.com/blog/2008/07/16/combohandler/) that does a similar thing but only for YUI components – thanks @triblondon for the pointer.
+- Yahoo have a service called [YUI combohandler](http://www.yuiblog.com/blog/2008/07/16/combohandler/) that does a similar thing but only for YUI components – thanks @triblondon for the pointer.
 - For optimum JS load times, it's best to get files in the parser as quickly as possible, so one large large HTTP request is not as good as many small ones than can be downloaded in parallel. I guess our compromise is: is that an OK sacrifice given the target users?
 - As @jaffathecake points out, sourcemaps for development would be a very useful service.
 
