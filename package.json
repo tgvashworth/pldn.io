@@ -1,6 +1,6 @@
 {
   "name": "pldn.io",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Pulldown As A Service",
   "main": "index.js",
   "private": true,
