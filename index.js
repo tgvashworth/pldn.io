@@ -12,7 +12,6 @@ var errorStr = function (msg) {
 connect()
   .use(connect.logger('dev'))
   .use(connect.compress())
-  .use(connect.favicon())
   .use(function (req, _, next) {
     req.pldn = {};
     next();
