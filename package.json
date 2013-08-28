@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "description": "Pulldown As A Service",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "test": "tap ./test"
   },
