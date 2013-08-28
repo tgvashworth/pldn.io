@@ -16,6 +16,7 @@
     "tap": "~0.4.4"
   },
   "dependencies": {
-    "pulldown": "~0.5.0"
+    "pulldown": "~0.5.0",
+    "connect": "~2.8.7"
   }
 }

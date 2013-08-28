@@ -1,5 +1,5 @@
-var t = require('tap'),
-    urlp = require('../urlp');
+var t = require('tap');
+var urlp = require('../lib/urlp');
 
 t.test('url', function (t) {
 

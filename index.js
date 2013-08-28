@@ -1,11 +1,12 @@
-var http = require('http'),
-    urlp = require('./urlp');
+var connect = require('connect');
+var urlp = require('./lib/urlp');
 
-http.createServer(function (req, res) {
-  var args = urlp.parse(req.url);
-  console.log(args);
-  res.writeHead(200, { 'Content-Type': 'text/plain' });
-  res.end(JSON.stringify(args));
-}).listen(0, function () {
-  console.log('pldn.io @ http://localhost:' + this.address().port);
-});
+connect()
+  .use(urlp.mw.parse)
+  .use(function (req, res) {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end(JSON.stringify(req.args));
+  })
+  .listen(9123, function () {
+    console.log('pldn.io @ http://localhost:' + this.address().port);
+  });
