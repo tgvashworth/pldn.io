@@ -10,7 +10,7 @@ Pulldown As A Service.
 
 ## Nota bene
 
-pldn.io is still totally in development. **don't** use it in production (*yet*). If you do, you're mental.
+pldn.io is still totally in development. **don't** use it in production – *yet*. If you do, you're mental.
 
 ## The idea
 
