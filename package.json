@@ -18,5 +18,9 @@
   "dependencies": {
     "pulldown": "~1.0.0",
     "connect": "~2.8.7"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "0.3.x"
   }
 }

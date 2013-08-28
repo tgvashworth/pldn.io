@@ -41,6 +41,6 @@ connect()
     console.log('err', err);
     res.end(errorStr(err.message || err));
   })
-  .listen(9123, function () {
+  .listen(process.env.PORT || 0, function () {
     console.log('pldn.io @ http://localhost:' + this.address().port);
   });
