@@ -37,6 +37,7 @@ connect()
   // Produce the final response
   .use(function (req, res, next) {
     var results = req.pldn.files.map(function (file) {
+      if (!file.contents) { return errorStr(file.searchTerm + ' not found.'); }
       return file.contents;
     });
     results.unshift(supplant('/** Served with <3 by pldn.io v{version} **/', pkg));

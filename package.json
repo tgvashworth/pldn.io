@@ -17,7 +17,7 @@
     "tap": "~0.4.4"
   },
   "dependencies": {
-    "pulldown": "~1.0.0",
+    "pulldown": "~1.0.1",
     "connect": "~2.8.7"
   },
   "engines": {
