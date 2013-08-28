@@ -36,7 +36,7 @@ connect()
   })
   // Produce the final response
   .use(function (req, res, next) {
-    var results = req.pldn.files.reverse().map(function (file) {
+    var results = req.pldn.files.map(function (file) {
       return file.contents;
     });
     results.unshift(supplant('/** Served with <3 by pldn.io v{version} **/', pkg));
