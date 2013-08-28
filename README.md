@@ -3,14 +3,14 @@
 Pulldown As A Service.
 
 ```html
-<script src="//pldn.io/html5shiv/jquery@1.9.1/underscore"></script>
+<script src="//js.pldn.io/html5shiv/jquery@1.9.1/underscore"></script>
 ```
 
 'nuff said?
 
 ## Nota bene
 
-pldn.io is still totally in development. It doesn't work yet and, even if it does and this message is still around, **don't** use it in production *yet*. If you do, you're mental.
+pldn.io is still totally in development. **don't** use it in production (*yet*). If you do, you're mental.
 
 ## The idea
 
