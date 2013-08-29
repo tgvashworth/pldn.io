@@ -1,9 +1,16 @@
 var pkg      = require('./package.json');
 var connect  = require('connect');
+var moment   = require('moment');
 var urlp     = require('./lib/urlp');
 var pulldown = new (require('pulldown'))();
 var supplant = require('./lib/supplant');
 var cache    = require('./lib/cache');
+
+var cacheConfig = {
+  maxAge: moment().add('months', 1).diff(moment(), 'seconds'),
+  expiresDate: moment.utc().add('months', 1).toDate().toUTCString(),
+  errorExpiresDate: moment.utc().toDate().toUTCString()
+};
 
 var errorStr = function (msg) {
   return '(\'console\' in window) && console.log("pldn.io: ' + msg + '")';
@@ -21,6 +28,8 @@ connect()
   // Set the content type as javascript
   .use(function (req, res, next) {
     res.setHeader("Content-Type", "application/javascript");
+    res.setHeader("Cache-Control", supplant("no-transform,public,max-age={maxAge}", cacheConfig));
+    res.setHeader("Expires", supplant("{expiresDate}", cacheConfig));
     next();
   })
   // Cache
@@ -57,6 +66,8 @@ connect()
   })
   // Error handler
   .use(function (err, req, res, next) {
+    res.setHeader("Cache-Control", "no-transform,public,max-age=0,s-maxage=0,no-cache");
+    res.setHeader("Expires", supplant("{errorExpiresDate}", cacheConfig));
     res.statusCode = 500;
     res.end(errorStr(err.message || err));
   })
