@@ -4,11 +4,11 @@
 <script src="//js.pldn.io/html5shiv/jquery@1.9.1/underscore"></script>
 ```
 
-**js.pldn.io** is [pulldown](https://github.com/jackfranklin/pulldown) for the client side. That means you get, in one script tag:
+**js.pldn.io** is [pulldown](https://github.com/jackfranklin/pulldown) for the client side. That means you get:
 
-1) all your front–end dependencies...
-2) minified, concatenated and cached (we Do The Right Thing™ so you don't have to worry)
-3) new libraries at your finger tips (just know the name)
+1. All your front–end dependencies in in one script tag.
+2. They're minified, concatenated and cached (we Do The Right Thing™ so you don't have to worry)
+3. New libraries at your finger-tips (you just need to know the name)
 
 Sweet, huh?
 
@@ -20,7 +20,7 @@ It's mind-blowingly simple. Just add a `script` tag to your page, pointing to `j
 <script src="//js.pldn.io/"></script>
 ```
 
-Then add library names. We go grab these for you from [CDNjs](http://cdnjs.com/).
+Then add library names. We get these for you from [CDNjs](http://cdnjs.com/).
 
 ```html
 <script src="//js.pldn.io/jquery/underscore/backbone"></script>
@@ -35,9 +35,15 @@ You can even specify a specific version!
 
 ### Who should use this?
 
-Font-end people who's sites have a small set of dependencies, and who don't have the resources or specialist knowledge to do 'the right thing' with concatenation, minification, caching and delivery.
+People who's sites have a small set of dependencies, and who don't have the resources or specialist knowledge, or time, to do the right thing with concatenation, minification, caching and delivery.
 
-### Overview
+## Anything else?
+
+- We tell you about errors with a simple `console.log` inside the concatted file. If something's going wrong, check your browser's console.
+
+There's probably more – if you have a question, [ask it in an issue](https://github.com/phuu/pldn.io/issues/new).
+
+### Technical Overview
 
 `pld.io` works something like the following:
 
@@ -48,13 +54,9 @@ Agressive HTTP caching | Yes | The same URL (say `/jquery@1.9.1/underscore`) wil
 pldn.io cache | Yes | We cache recently used URLs, so if the CDN doesn't have it, we might!
 pldn.io server | Yes | This is main bit of pldn, finding the libraries you need and building a file. It
 pldn.io package cache | No | We will cache the contents of specific libraries to make pldn even faster.
-Pulldown | Pulldown accepts a list of identifiers (like `jquery` and `backbone`), and converts them into URLs for those libraries on a CDN by hitting the Pulldown API.
-Pulldown API | The [Pulldown API](https://github.com/phuu/pulldown-api) resolves identifiers to URLs using [pulldown-resolve](https://github.com/phuu/pulldown-resolve). This actually defers to CDNJS, but this dependency can be changed or improved in future.
-CDNjs | As mentioned above, Pulldown gets its libraries from CDNjs, although this could be added to or improved in future.
-
-## Other info
-
-- We tell you about errors with a simple `console.log` inside the concatted file. If something's going wrong, check your browser's console.
+Pulldown | Yes | Pulldown accepts a list of identifiers (like `jquery` and `backbone`), and converts them into URLs for those libraries on a CDN by hitting the Pulldown API.
+Pulldown API | Yes | The [Pulldown API](https://github.com/phuu/pulldown-api) resolves identifiers to URLs using [pulldown-resolve](https://github.com/phuu/pulldown-resolve). This actually defers to CDNJS, but this dependency can be changed or improved in future.
+CDNjs | Yes | As mentioned above, Pulldown gets its libraries from CDNjs, although this could be added to or improved in future.
 
 ### Notes
 
